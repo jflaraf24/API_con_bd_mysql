@@ -1,3 +1,4 @@
+// api para usar en app movil
 const express = require('express')
 const mysql = require('mysql')
 const bodyParser = require('body-parser')
