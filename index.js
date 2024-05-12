@@ -60,7 +60,7 @@ app.get('/usuarios', (req, res) => {
 app.get('/usuarios/:id', (req, res) => {
     const { id } = req.params
 
-    const query = `SELECT * FROM usuarios WHERE id_usuario=${id};`
+    const query = `SELECT * FROM usuarios WHERE idUsuario=${id};`
     conexion.query(query, (error, resultado) => {
         if(error) return console.error(error.message)
 
@@ -99,7 +99,7 @@ app.put('/usuarios/actualizar/:id', (req, res) => {
     const { id } = req.params
     const { nombre, email } = req.body
 
-    const query = `UPDATE usuarios SET nombre='${nombre}', email='${email}' WHERE id_usuario='${id}';`
+    const query = `UPDATE usuarios SET nombre='${nombre}', email='${email}' WHERE idUsuario='${id}';`
     conexion.query(query, (error) => {
         if(error) return console.error(error.message)
 
@@ -113,7 +113,7 @@ app.put('/usuarios/actualizar/:id', (req, res) => {
 app.delete('/usuarios/borrar/:id', (req, res) => {
     const { id } = req.params
 
-    const query = `DELETE FROM usuarios WHERE id_usuario=${id};`
+    const query = `DELETE FROM usuarios WHERE idUsuario=${id};`
     conexion.query(query, (error) => {
         if(error) console.error(error.message)
 
